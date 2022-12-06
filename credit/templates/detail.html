@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<form method="POST">
+    <p><legend><h3>{{client.name}}</h3></legend></p>
+    <p><legend>Дата рождения-->{{client.birth_year}}</legend></p>
+
+    <p><legend>{{client.loans.sum}}</legend></p>
+        {% for account in client.clients.all %}
+        {% for a in account.accounts.all %}
+        <p>Номер аккаунта-->{{account.number}}</p>
+        <p>Сумма кредита-->{{a.sum}}</p>
+
+        {% endfor%}
+        {% endfor%}
+
+
+</form>
+
+
+
+</body>
+</html>
